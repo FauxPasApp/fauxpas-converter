@@ -15,5 +15,5 @@ Example
 -------
 
     fauxpas -o json check MyProject.xcodeproj \
-        | ./convert.py checkstyle_xml
+        | ./fauxpas_convert.py checkstyle_xml
 
