@@ -41,7 +41,7 @@ class Diagnostic:
 
     def __init__(self, dictobj):
         self.obj = dictobj
-        self.html = DictWrapper(self.obj.get('html'), '')
+        self.html = DictWrapper(self.obj.get('html'), defaultvalue='')
         self.extent = DiagnosticExtent(self.obj.get('extent'))
 
     def __getattr__(self, attrname):
@@ -52,8 +52,8 @@ class Diagnostic:
 class DiagnosticExtent:
 
     def __init__(self, dictobj):
-        self.start = DictWrapper(dictobj.get('start'), 0)
-        self.end = DictWrapper(dictobj.get('end'), 0)
+        self.start = DictWrapper(dictobj.get('start'), defaultvalue=0)
+        self.end = DictWrapper(dictobj.get('end'), defaultvalue=0)
 
 
 class DictWrapper:
