@@ -6,7 +6,7 @@ Converts [Faux Pas] diagnostics set JSON into other formats. This is useful if y
 
 Currently supported formats:
 
-- CheckStyle XML
+- `checkstyle_xml`: Corresponds to the output of the CheckStyle tool for Java
 
 [Faux Pas]: http://fauxpasapp.com
 
