@@ -105,6 +105,28 @@ def checkstyle_xml(diags_set):
     return str(x)
 
 
+@formatter_function
+def xcode(diags_set):
+    for diag in diags_set.diagnostics:
+        file_position = ''
+        if 0 < len(diag.file):
+            file_position = ('%s:%d:%d: '
+                             % (diag.file,
+                                diag.extent.start.line,
+                                diag.extent.start.utf16Column))
+
+        description = (diag.info if 0 < len(diag.info)
+                       else diag.ruleDescription).replace('\n', ' ')
+        severity = 'error' if 9 <= diag.severity else 'warning'
+
+        print ('%s%s: %s - %s (%s)'
+               % (file_position,
+                  severity,
+                  diag.ruleName,
+                  description,
+                  diag.ruleShortName)).encode('utf-8')
+
+
 def main():
     """Usage: convert.py <format>
 

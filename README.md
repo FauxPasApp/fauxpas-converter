@@ -7,6 +7,7 @@ Converts [Faux Pas] diagnostics set JSON into other formats. This is useful if y
 Currently supported formats:
 
 - `checkstyle_xml`: Corresponds to the output of the CheckStyle tool for Java
+- `xcode`: Format understood by Xcode in the output of “Run Script” build phases
 
 [Faux Pas]: http://fauxpasapp.com
 
